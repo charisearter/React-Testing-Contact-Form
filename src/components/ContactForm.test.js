@@ -16,24 +16,25 @@ test('if user can type in input fields', () => {
   //query by form inputs
   const firstNameInput = getByPlaceholderText(/edd/i);
   const lastNameInput = getByPlaceholderText(/burke/i);
-  //const emailInput = getByPlaceholderText(/bluebill1049@hotmail.com/i);
+  const emailInput = getByPlaceholderText(/bluebill1049@hotmail.com/i);
 
 
   //Act - check to see user can type
   //fireEvent to type in inputs
 //firEven.change(variable from query inputs)
   fireEvent.change(firstNameInput, {
-    //target name: i'nputNameofField', value: 'whatever' 
-    target: { name: 'firstName', value: 'Ben' }
+    //target name: 'inputNameofField', value: 'whatever' 
+    //changed maxLenght to minLength:3
+    target: { name: 'firstName', value: 'Bennder' }
   });
 
   fireEvent.change(lastNameInput, {
     target: { name: 'lastName', value: 'Tennington' }
   });
-  
-  // fireEvent.change(emailInput, {
-  //   target: { name: 'email', value: 'benn@ten.com' }
-  // });
+  // moved placeholder from label to input area to pass
+  fireEvent.change(emailInput, {
+    target: { name: 'email', value: "benn@ten.com" }
+  });
 
   
 
