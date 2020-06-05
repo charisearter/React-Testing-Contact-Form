@@ -21,7 +21,8 @@ test('if user can type in input fields', () => {
 
   //Act - check to see user can type
   //fireEvent to type in inputs
-//firEven.change(variable from query inputs)
+//fireEven.change(variable from query inputs)
+
   fireEvent.change(firstNameInput, {
     //target name: 'inputNameofField', value: 'whatever' 
     //changed maxLenght to minLength:3
@@ -31,6 +32,7 @@ test('if user can type in input fields', () => {
   fireEvent.change(lastNameInput, {
     target: { name: 'lastName', value: 'Tennington' }
   });
+
   // moved placeholder from label to input area to pass
   fireEvent.change(emailInput, {
     target: { name: 'email', value: "benn@ten.com" }
@@ -38,6 +40,7 @@ test('if user can type in input fields', () => {
 
   //Assert - what I expect to happen
   //did expect(variableName).not.toBeValid for test purposes
+  //results in not passing
   expect(firstNameInput).toBeValid();
   expect(lastNameInput).toBeValid();
   expect(emailInput).toBeValid();
