@@ -16,7 +16,7 @@ test('if user can type in input fields', () => {
   //query by form inputs
   const firstNameInput = getByPlaceholderText(/edd/i);
   const lastNameInput = getByPlaceholderText(/burke/i);
-  const emailInput = getByPlaceholderText(/bluebill1049@hotmail.com/i);
+  //const emailInput = getByPlaceholderText(/bluebill1049@hotmail.com/i);
 
 
   //Act - check to see user can type
@@ -31,22 +31,18 @@ test('if user can type in input fields', () => {
     target: { name: 'lastName', value: 'Tennington' }
   });
   
-  fireEvent.change(emailInput, {
-    target: { name: 'email', value: 'benn@ten.com' }
-  });
+  // fireEvent.change(emailInput, {
+  //   target: { name: 'email', value: 'benn@ten.com' }
+  // });
 
   
 
   console.log(firstNameInput.value);
 
-  //query for submit button
-  const submitButton = getByText(/submit/i);
-
-  //fireEvent to click button
-  fireEvent.click(submitButton);
+  
 
   //Assert - what I expect to happen
   findAllByText(/ben/i);
-  expect(submitButton).toBeInTheDocument();
+  
   
 })
