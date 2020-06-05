@@ -17,7 +17,7 @@ test('if user can type in input fields', () => {
   const firstNameInput = getByPlaceholderText(/edd/i);
   const lastNameInput = getByPlaceholderText(/burke/i);
   const emailInput = getByPlaceholderText(/bluebill1049@hotmail.com/i);
-
+  
 
   //Act - check to see user can type
   //fireEvent to type in inputs
@@ -36,14 +36,9 @@ test('if user can type in input fields', () => {
     target: { name: 'email', value: "benn@ten.com" }
   });
 
-  
-
-  console.log(firstNameInput.value);
-
-  
-
   //Assert - what I expect to happen
-  findAllByText(/ben/i);
-  
-  
+  //did expect(variableName).not.toBeValid for test purposes
+  expect(firstNameInput).toBeValid();
+  expect(lastNameInput).toBeValid();
+  expect(emailInput).toBeValid();
 })
